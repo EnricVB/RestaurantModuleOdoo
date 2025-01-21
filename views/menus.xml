@@ -2,18 +2,16 @@
     <data>
 
         <!--
-        # El orden influye para mostrar las paginas. Controlado desde views.xml
-
-        <menuitem id="menu_module"               # Change id
+        <menuitem id="menu_module"
             name="Example"
-            sequence="1"/>                              # If 1, goes to this on restart
+            sequence="1"/>
 
-        <menuitem id="menu_model_creation"           # Change id
+        <menuitem id="menu_model_creation"
             name="Model"
             parent="menu_module"
             sequence="1"/>
 
-            <menuitem id="menu_create_model"               # Change id
+            <menuitem id="menu_create_model"
                 name="Create new Model"
                 parent="menu_model_creation"             
                 sequence="1"
