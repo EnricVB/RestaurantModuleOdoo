@@ -3,7 +3,7 @@
     'name': "restaurant",
 
     'summary': """
-        A module for booking clients/tables for multiple restaurants
+        A restaurant for booking clients/tables for multiple restaurants
     """,
 
     'description': """

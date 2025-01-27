@@ -5,8 +5,8 @@
     ### PAGINA LISTADO DE ELEMENTOS
 
     <record id="model_tree" model="ir.ui.view">         # Change id
-      <field name="name">module.model.tree</field>      # module.model.tree
-      <field name="model">module.model</field>          # module.model
+      <field name="name">restaurant.model.tree</field>      # restaurant.model.tree
+      <field name="model">restaurant.model</field>          # restaurant.model
       <field name="arch" type="xml">
 
         ## LISTA DE ELEMENTOS
@@ -21,8 +21,8 @@
     ### PAGINA CREACIÓN DE ELEMENTO
     
     <record id="model_form" model="ir.ui.view">         # Change id
-      <field name="name">module.model.form</field>      # module.model.form
-      <field name="model">module.model</field>          # module.model
+      <field name="name">restaurant.model.form</field>      # restaurant.model.form
+      <field name="model">restaurant.model</field>          # restaurant.model
       <field name="arch" type="xml">
         <form>
           <sheet>                                       # Formulario
@@ -50,8 +50,8 @@
     
     
     <record id="model_kanban" model="ir.ui.view">
-      <field name="name">module.model.kanban</field>
-      <field name="model">module.model</field>
+      <field name="name">restaurant.model.kanban</field>
+      <field name="model">restaurant.model</field>
       <field name="arch" type="xml">
         <kanban>
           <templates>
@@ -66,7 +66,7 @@
                     <field name="mote">
                   </h2>
 
-                  <span class="oe_module_name" style="margin-left: 10px; color: gray;">
+                  <span class="oe_restaurant_name" style="margin-left: 10px; color: gray;">
                     <p>
                       Text: <field name="field_name"/> <br/>
                     </p>
@@ -90,7 +90,7 @@
 
     <record model="ir.actions.act_window" id="create_model_action_window">   # ir.actions.act_window to change page  # create_model_action_window checks in menuitem for id. To switch to page.
       <field name="name">Name</field>                   # Variable name
-      <field name="res_model">module.model</field>      # Model to show
+      <field name="res_model">restaurant.model</field>      # Model to show
       <field name="view_mode">kanban,tree,form</field>         # Indica el orden que muestra las pantallas de menus.xml
       <field name="help" type="html">
         <p class="oe_view_nocontent_create">Model</p>       # Title

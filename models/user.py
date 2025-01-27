@@ -7,7 +7,7 @@ class User(models.Model):
 
     dni = fields.Char(string="DNI", required = True, unique = True)
     name = fields.Char(string="Name", required = True)
-    birthDate = fields.Integer(string="Date of birth")
+    birthDate = fields.Date(string="Date of birth")
     phone = fields.Char(string="Phone")
 
     @api.onchange('dni')
