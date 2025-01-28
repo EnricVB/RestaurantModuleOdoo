@@ -1,0 +1,52 @@
+<odoo>
+  <data>
+    <record id="user_tree" model="ir.ui.view">
+      <field name="name">restaurant.user.tree</field>
+      <field name="model">restaurant.user</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+    
+    <record id="user_form" model="ir.ui.view">
+      <field name="name">restaurant.user.form</field>
+      <field name="model">restaurant.user</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group name="group_top">
+              <div class="oe_title">
+                <h2>NOMBRE</h2>
+                <field name="dni"/>
+              </div>
+              
+              <group name="group_left">
+                <field name="name"/>
+                <field name="birthDate"/>
+                <field name="phone" widget="phone"/>
+              </group>
+
+              <group name="group_right">
+              </group>
+            </group>
+
+            <group name="group_bottom">
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="create_user_action_window">
+      <field name="name">User</field>
+      <field name="res_model">restaurant.user</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">User</p>
+        <p>Click 'Crear' para añadir nuevos elementos.</p>
+      </field>
+    </record>
+  </data>
+</odoo>

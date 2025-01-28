@@ -18,8 +18,8 @@
     'depends': ['base'],
 
     'data': [
-        'views/views.xml',
-        'views/templates.xml',
+        'views/user.xml',
+        'views/menus.xml',
     ],
     'demo': [
     ],

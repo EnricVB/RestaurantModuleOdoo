@@ -12,16 +12,13 @@ class User(models.Model):
 
     @api.onchange('dni')
     def _onchange_validateDni(self):
-        # VALIDATE DNI
-        return True
+        return
 
     @api.onchange('birthDate')
     def _onchange_validateBirthDate(self):
-        # VALIDATE DATE OF BIRTH
-        return True
+        return
 
     def getAge(self):
-        # CALCULATE AGE BY BIRTHDATE
         return 18
 
     _sql_constraints = [
