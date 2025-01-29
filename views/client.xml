@@ -1,0 +1,48 @@
+<odoo>
+    <data>
+        <record id="client_form" model="ir.ui.view">
+            <field name="name">restaurant.client.form</field>
+            <field name="model">restaurant.client</field>
+            <field name="inherit_id" ref="user_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='dni']" position="before">
+                    <h2>Client</h2>
+                </xpath>
+                <xpath expr="//group[@name='group_bottom']" position="inside">
+                    <field name="reservations"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="create_client_action_window" model="ir.actions.act_window">
+            <field name="name">restaurant.client.action</field>
+            <field name="model">restaurant.client</field>
+            <field name="view_mode">tree,form</field>
+            <field name="inherit_id" ref="restaurantmoduleodoo.create_user_action_window"/>
+            <field name="help" type="html">
+                <xpath expr="//div[@class='action_content']" position="inside">
+                    <h2 class="header">Client</h2>
+                </xpath>
+                <xpath expr="//h2[@class='header']" position="after">
+                    <p>Click 'Create' to add new Client</p>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="create_client_action_window">
+            <field name="name">Client</field>
+            <field name="res_model">restaurant.client</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <div class="action_content">
+                    <h2>Client</h2>
+                    <p>Click 'Create' to add Client</p>
+                </div>
+                
+        
+            </field>
+    </record>
+
+        
+    </data>
+</odoo>
