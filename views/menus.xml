@@ -1,19 +1,19 @@
 <odoo>
     <data>
 
-        <menuitem id="menu_restaurant"
-            name="Users"
+        <menuitem id="menu_restaurant_root"
+            name="Restaurant"
             sequence="1"/>
 
         <menuitem id="menu_user_creation"
-            name="User"
-            parent="menu_restaurant"
+            name="Users"
+            parent="menu_restaurant_root"
             sequence="1"/>
 
-            <menuitem id="menu_create_user"
-                name="Create new User"
-                parent="menu_user_creation"             
-                sequence="1"
-                action="create_user_action_window"/>
+        <menuitem id="menu_create_client"
+            name="Create new Client"
+            parent="menu_user_creation"             
+            sequence="1"
+            action="create_client_action_window"/>
     </data>
 </odoo>
