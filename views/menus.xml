@@ -21,6 +21,12 @@
             sequence="1"
             action="create_client_action_window"/>
         
+        <menuitem id="menu_create_employee"
+            name="Create new Employee"
+            parent="menu_user_creation"             
+            sequence="2"
+            action="create_employee_action_window"/>
+        
         <menuitem id="menu_create_local"
             name="Create new Local"
             parent="menu_local_creation"

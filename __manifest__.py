@@ -20,6 +20,7 @@
     'data': [
         'views/user.xml',
         'views/client.xml',
+        'views/employee.xml',
         'views/local.xml',
         'views/menus.xml',
     ],
