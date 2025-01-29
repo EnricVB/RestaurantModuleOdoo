@@ -25,17 +25,24 @@
                 <h3><field name="dni" placeholder="p. ej. 11223344G"/></h3>
             </group>
 
-            <group name="Birth Date">
-              <separator string="Birth Date"/>
-              <field name="birthDate"/>
-            </group>
 
-            <newLine/>
+            <notebook colspan="1" class="Information">
+              <page name="Client Information" string="Client Information">
+                <newLine/>
 
-            <group name="Contact">
-              <separator string="Contact"/>
-              <field name="phone" widget="phone"/>
-            </group>
+                <group name="Birth Date">
+                  <separator string="Birth Date"/>
+                  <field name="birthDate"/>
+                </group>
+
+                <newLine/>
+
+                <group name="Contact">
+                  <separator string="Contact"/>
+                  <field name="phone" widget="phone"/>
+                </group>
+              </page>
+            </notebook>
           </sheet>
         </form>
       </field>
