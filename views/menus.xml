@@ -9,6 +9,11 @@
             name="Users"
             parent="menu_restaurant_root"
             sequence="1"/>
+            
+        <menuitem id="menu_local_creation"
+            name="Local"
+            parent="menu_restaurant_root"
+            sequence="2"/>
 
         <menuitem id="menu_create_client"
             name="Create new Client"
@@ -16,10 +21,11 @@
             sequence="1"
             action="create_client_action_window"/>
         
-        <!--<menuitem id="menu_create_employee"
-            name="Create new Emlpoyee"
-            parent="menu_user_creation"             
-            sequence="2"
-            action="create_employee_action_window"/>-->
+        <menuitem id="menu_create_local"
+            name="Create new Local"
+            parent="menu_local_creation"
+            sequence="1"
+            action="create_local_action_window"/>
+        
     </data>
 </odoo>
