@@ -21,23 +21,19 @@
           <sheet>
             <label for="name"/>
             <h1><field name="name" placeholder="p. ej. Burger Restaurant"/></h1>
+
             <notebook colspan="2">
               <page name="Information">
-                <group name="Local Information">
-                    
-                    <separator string="Direction"/>
-                    <field name="direction"/>
+                <group>
+                  <separator string="Direction"/>
+                  <field name="direction"/>
                 </group>
               </page>
 
-              <page name="Eployees">
-                <group name="Local Employees">
-                  <separator string="Local Employees"/>
-                  
-                  <field name="employees"/>
-                </group>
+              <page name="Employees">
+                <separator string="Local Employees"/>
+                <field name="employees" nolabel="1"/>
               </page>
-
             </notebook>
           </sheet>
         </form>
