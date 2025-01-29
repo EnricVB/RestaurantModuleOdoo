@@ -15,5 +15,11 @@
             parent="menu_user_creation"             
             sequence="1"
             action="create_client_action_window"/>
+        
+        <!--<menuitem id="menu_create_employee"
+            name="Create new Emlpoyee"
+            parent="menu_user_creation"             
+            sequence="2"
+            action="create_employee_action_window"/>-->
     </data>
 </odoo>
