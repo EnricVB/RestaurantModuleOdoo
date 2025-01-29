@@ -19,6 +19,8 @@
 
     'data': [
         'views/user.xml',
+        'views/client.xml',
+        'views/local.xml',
         'views/menus.xml',
     ],
     'demo': [

@@ -1,0 +1,57 @@
+<odoo>
+  <data>
+    <record id="local_tree" model="ir.ui.view">
+      <field name="name">restaurant.local.tree</field>
+      <field name="model">restaurant.local</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="id"/>
+          <field name="name"/>
+          <field name="direction"/>
+          <field name="employees"/>
+        </tree>
+      </field>
+    </record>
+    
+    <record id="local_form" model="ir.ui.view">
+      <field name="name">restaurant.local.form</field>
+      <field name="model">restaurant.local</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <label for="name"/>
+            <h1><field name="name" placeholder="p. ej. Burger Restaurant"/></h1>
+            <notebook colspan="2">
+              <page name="Information">
+                <group name="Local Information">
+                    
+                    <separator string="Direction"/>
+                    <field name="direction"/>
+                </group>
+              </page>
+
+              <page name="Eployees">
+                <group name="Local Employees">
+                  <separator string="Local Employees"/>
+                  
+                  <field name="employees"/>
+                </group>
+              </page>
+
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="create_local_action_window">
+      <field name="name">Local</field>
+      <field name="res_model">restaurant.local</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">Local</p>
+        <p>Click 'Create' to add new Local.</p>
+      </field>
+    </record>
+  </data>
+</odoo>
