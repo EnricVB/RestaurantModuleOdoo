@@ -12,4 +12,3 @@ class LocalOwner(models.Model):
     birthDate = fields.Date(string = "Date of birth", required = False)
     
     local = fields.Many2many(comodel_name = "restaurant.local", string = "Local")
-    employees = fields.Many2many('restaurant.employee', string="Employees of a local owner")
