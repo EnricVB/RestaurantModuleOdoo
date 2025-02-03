@@ -8,8 +8,8 @@ class LocalOwner(models.Model):
 
     name = fields.Char(string="Name")
     dni = fields.Char(string="DNI", required = True, unique = True)
-    birthDate = fields.Date(string = "Date of birth", required = False)
     phone = fields.Char(string="Phone", unique = False, required = False)
-    local = fields.Many2many(comodel_name = "restaurant.local", string = "Local")
+    birthDate = fields.Date(string = "Date of birth", required = False)
     
-
+    local = fields.Many2many(comodel_name = "restaurant.local", string = "Local")
+    employees = fields.Many2many('restaurant.employee', string="Employees of a local owner")

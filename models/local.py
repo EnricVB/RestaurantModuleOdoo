@@ -9,3 +9,11 @@ class Local(models.Model):
     id = fields.Integer(string="ID", required = True, unique = True)
     direction = fields.Char(string = "Direction", required = True, unique = True)
     employees = fields.Many2many(comodel_name = "restaurant.employee", string = "Employees")
+
+    
+    @api.depends('employees')
+    def _onAddEmployee(self):
+        for local in self:
+            for employee in local.employees:
+                if local.id not in employee.local.ids:
+                    employee.local = [(4, local.id)]
