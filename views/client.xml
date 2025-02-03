@@ -22,11 +22,11 @@
                 </xpath>
 
                 <xpath expr="//notebook[@class='Information']" position="inside">
-                    <page name="Client Information" string="Client Information">
+                    <page name="Reservations" string="Reservations">
                         <newLine/>
-                        <group name="Reservations">
-                            <field name="reservations"/>
-                        </group>
+                        <div name="Reservations">
+                            <field name="reservations" nolabel="1"/>
+                        </div>
                     </page>
                 </xpath>
             </field>
