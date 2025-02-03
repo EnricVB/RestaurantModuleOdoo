@@ -17,10 +17,6 @@
             <field name="inherit_id" ref="user_form"/>
             <field name="mode">primary</field>
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='dni']" position="before">
-                    <h2>Client</h2>
-                </xpath>
-
                 <xpath expr="//notebook[@class='Information']" position="inside">
                     <page name="Reservations" string="Reservations">
                         <newLine/>
