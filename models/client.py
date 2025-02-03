@@ -10,6 +10,6 @@ class Client(models.Model):
     dni = fields.Char(string="DNI", required = True, unique = True)
     birthDate = fields.Date(string = "Date of birth", required = False)
     phone = fields.Char(string="Phone", unique = False, required = False)
-    reservations = fields.Many2many(comodel_name = "restaurant.book", string = "Reservations")
+    reservations = fields.Many2many(comodel_name = "restaurant.book", string = "Reservations", readonly = True)
     
 

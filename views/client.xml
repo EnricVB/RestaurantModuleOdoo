@@ -21,7 +21,7 @@
                     <page name="Reservations" string="Reservations">
                         <newLine/>
                         <div name="Reservations">
-                            <field name="reservations" nolabel="1"/>
+                            <field name="reservations" nolabel="1" readonly="1"/>
                         </div>
                     </page>
                 </xpath>
