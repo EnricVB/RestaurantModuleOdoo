@@ -27,7 +27,7 @@
 
 
             <notebook colspan="1" class="Information">
-              <page name="Client Information" string="Client Information">
+              <page name="Information" string="Information">
                 <newLine/>
 
                 <group name="Birth Date">
