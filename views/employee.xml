@@ -1,0 +1,52 @@
+<odoo>
+    <data>
+        <record id="employee_tree" model="ir.ui.view">
+            <field name="name">restaurant.employee.tree</field>
+            <field name="model">restaurant.employee</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="dni"/>
+                    <field name="image" widget="image" options="{'size': [100, 100]}"/>
+                    <field name="birthDate"/>
+                    <field name="phone"/>
+                    <field name="local"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="employeue_form" model="ir.ui.view">
+            <field name="name">restaurant.employee.form</field>
+            <field name="model">restaurant.employee</field>
+            <field name="inherit_id" ref="user_form"/>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='dni']" position="before">
+                    <h2>Employee</h2>
+                </xpath>
+
+                <xpath expr="//notebook[@class='Information']" position="inside">
+                    <page name="Employee Information" string="Employee Information">
+                        <newLine/>
+                        <group name="Image">
+                            <field class="oe_avatar" name="image" widget="image"/>
+                        </group>
+                        <group name="Local">
+                            <field name="local" readonly="True"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="create_employee_action_window">
+        <field name="name">Employee</field>
+        <field name="res_model">restaurant.employee</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Employee</p>
+            <p>Click 'Create' to add new Employee.</p>
+        </field>
+        </record>
+    </data>
+</odoo>
