@@ -26,6 +26,28 @@
             parent="menu_local_creation"
             sequence="1"
             action="create_local_action_window"/>
+
+        <menuitem id="menu_book_creation"
+            name="Book"
+            parent="menu_local_creation"
+            sequence="2"/>
+
+        <menuitem id="menu_create_book"
+            name="Create new Book"
+            parent="menu_book_creation"
+            sequence="1"
+            action="create_book_action_window"/> 
+
+        <menuitem id="menu_table_creation"
+            name="Table"
+            parent="menu_local_creation"
+            sequence="3"/>
+
+        <menuitem id="menu_create_table"
+            name="Create new Table"
+            parent="menu_table_creation"
+            sequence="1"
+            action="create_table_action_window"/>  
         
     </data>
 </odoo>
