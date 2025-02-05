@@ -7,4 +7,4 @@ class Book(models.Model):
 
     id = fields.Integer(string="ID", required = True, unique = True)
     table = fields.Many2one(comodel_name = "restaurant.table", string="Table")
-    date = fields.Date(string = "Date of book", required = True)
+    date = fields.DateTime(string = "Date of book with hour", required = True)

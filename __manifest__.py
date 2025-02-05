@@ -21,6 +21,7 @@
         'views/user.xml',
         'views/client.xml',
         'views/local.xml',
+        'views/employee.xml',
         'views/menus.xml',
     ],
     'demo': [
