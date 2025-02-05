@@ -32,7 +32,13 @@
 
               <page name="Employees">
                 <separator string="Local Employees"/>
-                <field name="employees" nolabel="1"/>
+                <field name="employees">
+                  <tree editable="bottom">
+                    <field name="name"/>
+                    <field name="dni"/>
+                    <field name="phone"/>
+                  </tree>
+                </field>
               </page>
             </notebook>
           </sheet>

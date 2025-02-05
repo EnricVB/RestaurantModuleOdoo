@@ -32,12 +32,12 @@ class User(models.Model):
                 (today.month, today.day) < (self.birthDate.month, self.birthDate.day)
             )
             
-            if age < 5:
+            if age < 16:
                 self.birthDate = ''
                 return {
                     'warning': {
                         'title': "Underage",
-                        'message': "Wrong birth date.",
+                        'message': "User must be at least 16yo.",
                     }
                 }
         

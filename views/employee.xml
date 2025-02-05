@@ -21,16 +21,15 @@
             <field name="inherit_id" ref="user_form"/>
             <field name="mode">primary</field>
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='dni']" position="before">
-                    <h2>Employee</h2>
+                <xpath expr="//group[@name='User Information']" position="before">
+                    <div name="group_left">  
+                        <field class="oe_avatar" name="image" widget="image" nolabel="1"/>
+                    </div>
                 </xpath>
 
                 <xpath expr="//notebook[@class='Information']" position="inside">
                     <page name="Employee Information" string="Employee Information">
                         <newLine/>
-                        <group name="Image">
-                            <field class="oe_avatar" name="image" widget="image"/>
-                        </group>
                         <group name="Local">
                             <field name="local" readonly="True"/>
                         </group>
