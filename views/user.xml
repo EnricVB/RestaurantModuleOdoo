@@ -16,8 +16,9 @@
       <field name="arch" type="xml">
         <form>
           <sheet>
+            <separator class="User Information" string="User Information"/>
+            
             <group name="User Information">
-                <separator string="User Information"/>
                 <label for="name"/>
                 <h1><field name="name" placeholder="p. ej. John Doe"/></h1>
 
