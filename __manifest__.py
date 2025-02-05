@@ -12,7 +12,7 @@
     'author': "Enric Velasco Bufi and Cesar Abad Velasco",
     'website': "https://github.com/EnricVB/RestaurantModuleOdoo",
 
-    'category': 'Uncategorized',
+    'category': 'Application',
     'version': '0.1',
 
     'depends': ['base'],
@@ -27,5 +27,7 @@
     ],
     'pip': [
 
-    ],
+    ], 
+
+    'application': True,
 }
