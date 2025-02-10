@@ -11,6 +11,8 @@ class Table(models.Model):
     positionY = fields.Integer(string="Y Position for visual purposes", required=True)
     chairs = fields.Integer(string="Number of chairs per table", required=True)
 
+    book = fields.One2many(comodel_name = "restaurant.book", string = "Books of this table", inverse_name="table")
+
     _sql_constraints = [
         ('table_number_local_unique', 'UNIQUE(tableNumber, local)', 'There can be just one same table number per local.')
     ]

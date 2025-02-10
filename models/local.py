@@ -9,7 +9,7 @@ class Local(models.Model):
     id = fields.Integer(string="ID", required = True, unique = True)
     direction = fields.Char(string = "Direction", required = True, unique = True)
     employees = fields.Many2many(comodel_name = "restaurant.employee", string = "Employees")
-
+    table = fields.One2many(comodel_name = "restaurant.table", string = "Tables", inverse_name="local")
     
     @api.depends('employees')
     def _onAddEmployee(self):
