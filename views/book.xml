@@ -7,6 +7,7 @@
         <tree>
           <field name="table"/>
           <field name="date" widget="calendar"/>
+          <field name="client"/>
         </tree>
       </field>
     </record>
@@ -20,6 +21,7 @@
             <group name="group_top">
               <field name="table"/>
               <field name="date" widget="calendar"/>
+              <field name="client"/>
             </group>
             
           </sheet>
