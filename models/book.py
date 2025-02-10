@@ -7,3 +7,4 @@ class Book(models.Model):
 
     table = fields.Many2one(comodel_name = "restaurant.table", string="Table")
     date = fields.Datetime(string = "Date of book with hour", required = True)
+    client = fields.Many2one(comodel_name="restaurant.client", string="Client")
