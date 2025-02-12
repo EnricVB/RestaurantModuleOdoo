@@ -6,7 +6,6 @@ class Local(models.Model):
     _description = 'Physical local'
 
     name = fields.Char(string="Name", required=True)
-    id = fields.Integer(string="ID", required = True, unique = True)
     direction = fields.Char(string = "Direction", required = True, unique = True)
     employees = fields.Many2many(comodel_name = "restaurant.employee", string = "Employees")
     table = fields.One2many(comodel_name = "restaurant.table", string = "Tables", inverse_name="local")

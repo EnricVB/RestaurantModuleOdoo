@@ -9,6 +9,7 @@
           <field name="name"/>
           <field name="direction"/>
           <field name="employees"/>
+          <field name="table"/>
         </tree>
       </field>
     </record>
@@ -39,17 +40,20 @@
                     <field name="phone"/>
                   </tree>
                 </field>
+                
+                <field name="table"/>
               </page>
             </notebook>
           </sheet>
         </form>
       </field>
     </record>
+    
 
     <record model="ir.actions.act_window" id="create_local_action_window">
       <field name="name">Local</field>
       <field name="res_model">restaurant.local</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">kanban, tree,form</field>
       <field name="help" type="html">
         <p class="oe_view_nocontent_create">Local</p>
         <p>Click 'Create' to add new Local.</p>
