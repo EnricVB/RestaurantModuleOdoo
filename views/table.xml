@@ -6,9 +6,7 @@
       <field name="arch" type="xml">
         <tree>
           <field name="tableNumber"/>
-          <field name="local"/><!--Colocar mejor-->
-          <field name="positionX"/>
-          <field name="positionY"/>
+          <field name="local"/>
           <field name="chairs"/>
         </tree>
       </field>
@@ -22,23 +20,65 @@
           <sheet>
             <group name="group_top">
               <field name="tableNumber"/>
-              <field name="positionX"/>
-              <field name="positionY"/>
             </group>
             <group name="group_bottom">
               <field name="chairs"/>
-              <field name="local"/><!--Colocar mejor-->
+              <field name="local"/>
             </group>
             
           </sheet>
         </form>
       </field>
     </record>
+    
+    <record id="table_kanban" model="ir.ui.view">
+        <field name="name">restaurant.table.kanban</field>
+        <field name="model">restaurant.table</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="tableNumber"/>
+                <field name="chairs"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click" style="padding: 10px;">
+                            <div style="position: relative; width: 240px; height: 240px;">
+                                <!--<img src="/RestaurantModuleOdoo/static/img/mesa.png" 
+                                    style="
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 68.5%;
+                                        transform: translate(-50%, -50%);
+                                        width: 200px;
+                                        height: 200px;
+                                        z-index: 2;"/>-->
+                                
+                                <t t-set="chairs_count" t-value="record.chairs.raw_value"/>
+
+                                <t t-foreach="new Array(chairs_count)" t-as="chair" t-key="chair_index">
+                                    <img src="/RestaurantModuleOdoo/static/img/silla.png" 
+                                        t-attf-style="
+                                            position: absolute;
+                                            width: 60px;
+                                            height: 60px;
+                                            top: 50%;
+                                            left: 68.5%;
+                                            transform: 
+                                               rotate(#{(chair_index * (360 / chairs_count)) - 90}deg)
+                                              translate(120px);
+                                            z-index: 1;"/>
+                                </t>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
 
     <record model="ir.actions.act_window" id="create_table_action_window">
       <field name="name">table</field>
       <field name="res_model">restaurant.table</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">kanban,tree,form</field>
       <field name="help" type="html">
         <p class="oe_view_nocontent_create">table</p>
         <p>Click 'Create' to add new table.</p>

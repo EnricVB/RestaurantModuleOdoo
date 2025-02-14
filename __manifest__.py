@@ -30,7 +30,14 @@
     ],
     'pip': [
 
-    ], 
+    ],
+    'assets': {
+        'web.assets_backend': [
+            'restaurant/static/img/mesa.png',
+            'restaurant/static/img/silla.png',
+        ],
+    },
+
 
     'application': True,
 }
