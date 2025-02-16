@@ -8,6 +8,7 @@
           <field name="tableNumber"/>
           <field name="local"/>
           <field name="chairs"/>
+          <field name="bookTableOccupancy"/>
         </tree>
       </field>
     </record>
@@ -38,21 +39,22 @@
             <kanban>
                 <field name="tableNumber"/>
                 <field name="chairs"/>
+                <field name="bookTableOccupancy"/>
                 <templates>
                     <t t-name="kanban-box">
                         <div class="oe_kanban_global_click" style="padding: 10px;">
                             <div style="position: relative; width: 240px; height: 240px;">
-                                <!--<img src="/RestaurantModuleOdoo/static/img/mesa.png" 
+                                <img src="/RestaurantModuleOdoo/static/img/mesa.png" 
                                     style="
                                         position: absolute;
                                         top: 50%;
-                                        left: 68.5%;
+                                        left: 58.5%;
                                         transform: translate(-50%, -50%);
                                         width: 200px;
                                         height: 200px;
-                                        z-index: 2;"/>-->
+                                        z-index: 2;"/>
                                 
-                                <t t-set="chairs_count" t-value="record.chairs.raw_value"/>
+                                <t t-set="chairs_count" t-value="record.bookTableOccupancy.raw_value"/>
 
                                 <t t-foreach="new Array(chairs_count)" t-as="chair" t-key="chair_index">
                                     <img src="/RestaurantModuleOdoo/static/img/silla.png" 
@@ -60,13 +62,14 @@
                                             position: absolute;
                                             width: 60px;
                                             height: 60px;
-                                            top: 50%;
-                                            left: 68.5%;
+                                            top: 37.5%;
+                                            left: 45.5%;
                                             transform: 
                                                rotate(#{(chair_index * (360 / chairs_count)) - 90}deg)
-                                              translate(120px);
+                                              translate(100px);
                                             z-index: 1;"/>
                                 </t>
+                                
                             </div>
                         </div>
                     </t>
