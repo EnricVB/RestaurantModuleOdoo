@@ -26,7 +26,6 @@
               <field name="chairs"/>
               <field name="local"/>
             </group>
-            
           </sheet>
         </form>
       </field>
@@ -39,21 +38,49 @@
             <kanban>
                 <field name="tableNumber"/>
                 <field name="chairs"/>
+                <field name="local"/>
                 <field name="bookTableOccupancy"/>
                 <templates>
                     <t t-name="kanban-box">
                         <div class="oe_kanban_global_click" style="padding: 10px;">
+                            <div style="
+                                margin-bottom: 8px;
+                                padding: 8px;
+                                background-color: #f8f9fa;
+                                border-radius: 6px;
+                                text-align: center;
+                                font-weight: bold;
+                                color: #2c3e50;">
+                                <t t-esc="record.local.value"/>
+                            </div>
+
                             <div style="position: relative; width: 240px; height: 240px;">
                                 <img src="/RestaurantModuleOdoo/static/img/mesa.png" 
                                     style="
                                         position: absolute;
                                         top: 50%;
-                                        left: 58.5%;
+                                        left: 68.5%;
                                         transform: translate(-50%, -50%);
                                         width: 200px;
                                         height: 200px;
                                         z-index: 2;"/>
                                 
+                                <div style="
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 68.5%;
+                                    transform: translate(-50%, -50%);
+                                    z-index: 3;
+                                    font-size: 24px;
+                                    font-weight: bold;
+                                    color: #000000;
+                                    background-color: rgba(255, 255, 255, 0.7);
+                                    padding: 5px 10px;
+                                    border-radius: 50%;
+                                    ">
+                                    <t t-esc="record.tableNumber.value"/>
+                                </div>
+
                                 <t t-set="chairs_count" t-value="record.bookTableOccupancy.raw_value"/>
 
                                 <t t-foreach="new Array(chairs_count)" t-as="chair" t-key="chair_index">
@@ -63,13 +90,47 @@
                                             width: 60px;
                                             height: 60px;
                                             top: 37.5%;
-                                            left: 45.5%;
+                                            left: 55.5%;
                                             transform: 
                                                rotate(#{(chair_index * (360 / chairs_count)) - 90}deg)
                                               translate(100px);
                                             z-index: 1;"/>
                                 </t>
+                            </div>
+
+                            <div style="
+                                margin-top: 8px;
+                                padding: 8px;
+                                background-color: #f8f9fa;
+                                border-radius: 6px;">
+                                <div style="
+                                    display: flex;
+                                    justify-content: space-between;
+                                    margin-bottom: 4px;">
+                                    <span style="font-weight: bold;">Total Chairs:</span>
+                                    <span><t t-esc="record.chairs.value"/></span>
+                                </div>
+
+                                <div style="
+                                    display: flex;
+                                    justify-content: space-between;">
+                                    <span style="font-weight: bold;">Current Occupancy:</span>
+                                    <span><t t-esc="record.bookTableOccupancy.value"/> / <t t-esc="record.chairs.value"/></span>
+                                </div>
                                 
+                                <div t-attf-style="
+                                    margin-top: 8px;
+                                    padding: 4px;
+                                    text-align: center;
+                                    border-radius: 4px;
+                                    font-weight: bold;
+                                    #{record.bookTableOccupancy.raw_value == 0 ? 'background-color: #28a745; color: white;' : 
+                                      record.bookTableOccupancy.raw_value == record.chairs.raw_value ? 'background-color: #dc3545; color: white;' : 
+                                      'background-color: #ffc107; color: black;'}">
+                                    <t t-if="record.bookTableOccupancy.raw_value == 0">Available</t>
+                                    <t t-elif="record.bookTableOccupancy.raw_value >= record.chairs.raw_value">Full</t>
+                                    <t t-else="">Partially Occupied</t>
+                                </div>
                             </div>
                         </div>
                     </t>
