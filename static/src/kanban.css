@@ -11,7 +11,6 @@
     border-radius: 5px;
 }
 
-
 .kanbanTitle {
     font-size: 20px;
     background-color: lightblue;
@@ -31,6 +30,13 @@
     justify-content: space-between;
 }
 
+.kanbanContent {
+    padding: 12px;
+    background-color: #e8f6f3;
+    border-radius: 4px;
+    text-align: center;
+}
+
 .availableOccupancy {
     background-color: green;
 }
@@ -41,4 +47,14 @@
 
 .fullOccupancy {
     background-color: red;
+}
+
+.oe_kanban_global_click {
+    position: relative;
+    margin: 0 8px 8px 0;
+    padding: 16px;
+    width: 400px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

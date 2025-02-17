@@ -57,53 +57,21 @@
                 <field name="employees"/>
                 <templates>
                     <t t-name="kanban-box">
-                        <div class="oe_kanban_global_click" style="
-                            position: relative;
-                            margin: 0 8px 8px 0;
-                            padding: 16px;
-                            width: 400px;
-                            border-radius: 8px;
-                            background-color: white;
-                            box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        <div class="oe_kanban_global_click">
                             
-                            <div style="
-                                margin-bottom: 16px;
-                                padding-bottom: 8px;
-                                border-bottom: 2px solid #3498db;">
-                                <h3 style="
-                                    margin: 0;
-                                    color: #2c3e50;
-                                    font-size: 20px;
-                                    font-weight: bold;">
-                                    <t t-esc="record.name.value"/>
-                                </h3>
+                            <!-- Muestra el nombre del local -->
+                            <div class="kanbanTitle">
+                              <t t-esc="record.name.value"/>
                             </div>
 
-                            <div style="
-                                margin-bottom: 16px;
-                                padding: 8px;
-                                background-color: #f8f9fa;
-                                border-radius: 4px;">
-                                <div style="
-                                    display: flex;
-                                    align-items: center;">
-                                    <span style="
-                                        font-weight: bold;
-                                        color: #7f8c8d;
-                                        margin-right: 8px;">
-                                        Direction:
-                                    </span>
-                                    <span style="color: #34495e;">
-                                        <t t-esc="record.direction.value"/>
-                                    </span>
-                                </div>
+                            <!-- Muestra la direccion del local -->
+                            <div class="kanbanSubtitle">
+                              <span>Direction:</span>
+                              <t t-esc="record.direction.value"/>
                             </div>
 
-                            <div style="
-                                padding: 12px;
-                                background-color: #e8f6f3;
-                                border-radius: 4px;
-                                text-align: center;">
+                            <!-- Muestra la cantidad de empleados que tiene el local -->
+                            <div class="kanbanContent">
                                 <div style="font-size: 24px; font-weight: bold; color: #16a085;">
                                     <t t-esc="record.employees.raw_value.length"/>
                                 </div>
