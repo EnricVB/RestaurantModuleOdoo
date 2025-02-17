@@ -1,0 +1,44 @@
+.kanbanTitle,
+.kanbanSubtitle {
+    display: block;
+    border-bottom: 1px solid #eaeaea;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+
+.kanbanTitle {
+    font-size: 20px;
+    background-color: lightblue;
+}
+
+.kanbanSubtitle,
+.availableOccupancy,
+.partialOccupancy,
+.fullOccupancy {
+    font-size: 15px;
+    background-color: rgb(231, 231, 231);
+
+    padding-left: 10px;
+    padding-right: 10px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.availableOccupancy {
+    background-color: green;
+}
+
+.partialOccupancy {
+    background-color: yellow;
+}
+
+.fullOccupancy {
+    background-color: red;
+}

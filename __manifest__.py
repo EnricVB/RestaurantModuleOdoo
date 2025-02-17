@@ -33,8 +33,9 @@
     ],
     'assets': {
         'web.assets_backend': [
-            'restaurant/static/img/mesa.png',
-            'restaurant/static/img/silla.png',
+            'RestaurantModuleOdoo/static/img/mesa.png',
+            'RestaurantModuleOdoo/static/img/silla.png',
+            'RestaurantModuleOdoo/static/src/kanban.css',
         ],
     },
 
