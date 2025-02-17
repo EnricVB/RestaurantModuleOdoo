@@ -8,7 +8,7 @@
           <field name="table"/>
           <field name="date" widget="calendar"/>
           <field name="client"/>
-          <field name="tableOcupancy"/>
+          <field name="tableOccupancy"/>
         </tree>
       </field>
     </record>
@@ -23,7 +23,7 @@
               <field name="table"/>
               <field name="date" widget="calendar"/>
               <field name="client"/>
-              <field name="tableOcupancy"/>
+              <field name="tableOccupancy"/>
             </group>
             
           </sheet>

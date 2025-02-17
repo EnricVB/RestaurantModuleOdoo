@@ -9,7 +9,6 @@
           <field name="name"/>
           <field name="direction"/>
           <field name="employees"/>
-          <field name="table"/>
         </tree>
       </field>
     </record>
@@ -40,8 +39,6 @@
                     <field name="phone"/>
                   </tree>
                 </field>
-                
-                <field name="table"/>
               </page>
             </notebook>
           </sheet>
@@ -49,6 +46,77 @@
       </field>
     </record>
     
+    <record id="local_kanban" model="ir.ui.view">
+        <field name="name">restaurant.local.kanban</field>
+        <field name="model">restaurant.local</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="id"/>
+                <field name="name"/>
+                <field name="direction"/>
+                <field name="employees"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click" style="
+                            position: relative;
+                            margin: 0 8px 8px 0;
+                            padding: 16px;
+                            width: 400px;
+                            border-radius: 8px;
+                            background-color: white;
+                            box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            
+                            <div style="
+                                margin-bottom: 16px;
+                                padding-bottom: 8px;
+                                border-bottom: 2px solid #3498db;">
+                                <h3 style="
+                                    margin: 0;
+                                    color: #2c3e50;
+                                    font-size: 20px;
+                                    font-weight: bold;">
+                                    <t t-esc="record.name.value"/>
+                                </h3>
+                            </div>
+
+                            <div style="
+                                margin-bottom: 16px;
+                                padding: 8px;
+                                background-color: #f8f9fa;
+                                border-radius: 4px;">
+                                <div style="
+                                    display: flex;
+                                    align-items: center;">
+                                    <span style="
+                                        font-weight: bold;
+                                        color: #7f8c8d;
+                                        margin-right: 8px;">
+                                        Direction:
+                                    </span>
+                                    <span style="color: #34495e;">
+                                        <t t-esc="record.direction.value"/>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div style="
+                                padding: 12px;
+                                background-color: #e8f6f3;
+                                border-radius: 4px;
+                                text-align: center;">
+                                <div style="font-size: 24px; font-weight: bold; color: #16a085;">
+                                    <t t-esc="record.employees.raw_value.length"/>
+                                </div>
+                                <div style="color: #2c3e50; font-size: 14px;">
+                                    Employees
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
 
     <record model="ir.actions.act_window" id="create_local_action_window">
       <field name="name">Local</field>

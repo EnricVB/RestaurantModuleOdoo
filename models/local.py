@@ -10,8 +10,6 @@ class Local(models.Model):
     employees = fields.Many2many(comodel_name = "restaurant.employee", string = "Employees")
     table = fields.One2many(comodel_name = "restaurant.table", string = "Tables", inverse_name="local")
     
-    
-
     @api.depends('employees')
     def _onAddEmployee(self):
         for local in self:
