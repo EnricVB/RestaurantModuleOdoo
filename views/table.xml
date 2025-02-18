@@ -13,23 +13,44 @@
       </field>
     </record>
     
-    <record id="table_form" model="ir.ui.view">
-      <field name="name">restaurant.table.form</field>
-      <field name="model">restaurant.table</field>
-      <field name="arch" type="xml">
-        <form>
-          <sheet>
-            <group name="group_top">
-              <field name="tableNumber"/>
-            </group>
-            <group name="group_bottom">
-              <field name="chairs"/>
-              <field name="local"/>
-            </group>
-          </sheet>
-        </form>
-      </field>
+
+    <record id="table_form_view" model="ir.ui.view">
+        <field name="name">restaurant.table.form</field>
+        <field name="model">restaurant.table</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <separator class="Table Informacion" string="Table Information"/>
+
+                    <div>
+                      <label for="local"/>
+                      <field name="local"/>
+                    </div>
+
+                    <div>
+                      <label for="tableNumber"/>
+                      <field name="tableNumber"/>
+                      
+                      <label for="chairs"/>
+                      <field name="chairs"/>
+                    </div>
+
+                    <notebook>
+                      <page string="Reservations">
+                        <field name="book">
+                          <tree editable="bottom">
+                            <field name="client"/>
+                            <field name="date"/>
+                            <field name="tableOccupancy"/>
+                          </tree>
+                        </field>
+                      </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
     </record>
+
     
     <record id="table_kanban" model="ir.ui.view">
         <field name="name">restaurant.table.kanban</field>

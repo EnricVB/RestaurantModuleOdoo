@@ -19,8 +19,12 @@
       <field name="arch" type="xml">
         <form>
           <sheet>
-            <label for="name"/>
-            <h1><field name="name" placeholder="p. ej. Burger Restaurant"/></h1>
+            <separator class="Local Informacion" string="Local Information"/>
+
+            <div>
+              <label for="name"/>
+              <h1><field name="name" placeholder="p. ej. Burger Restaurant"/></h1>
+            </div>
 
             <notebook colspan="2">
               <page name="Information">

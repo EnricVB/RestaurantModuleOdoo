@@ -19,6 +19,8 @@
       <field name="arch" type="xml">
         <form>
           <sheet>
+            <separator class="Book Informacion" string="Book Information"/>
+
             <group name="group_top">
               <field name="table"/>
               <field name="date" widget="calendar"/>
