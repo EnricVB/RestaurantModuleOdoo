@@ -11,5 +11,3 @@ class Client(models.Model):
     birthDate = fields.Date(string = "Date of birth", required = False)
     phone = fields.Char(string="Phone", unique = False, required = False)
     reservations = fields.Many2many(comodel_name = "restaurant.book", string = "Reservations", readonly = True)
-    
-

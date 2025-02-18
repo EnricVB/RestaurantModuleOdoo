@@ -5,12 +5,19 @@ class Table(models.Model):
     _name = 'restaurant.table'
     _description = 'restaurant.table'
 
-    tableNumber = fields.Integer(string="Table identify number", required=True, unique=True)
+    name = fields.Char(compute="_nameCompute")
+
+    tableNumber = fields.Integer(string="Table identify number", required=True)
     local = fields.Many2one('restaurant.local', string="Local which this table belongs", required=True)
     chairs = fields.Integer(string="Number of chairs per table", required=True)
 
     book = fields.One2many(comodel_name = "restaurant.book", string = "Books of this table", inverse_name="table")
     bookTableOccupancy = fields.Integer(string = "Table occupancy at actual book", compute = "_ocuppancyPerDate")
+
+    @api.model
+    def _nameCompute(self):
+        for table in self:
+            table.name = f"Table {table.tableNumber}"
 
     @api.depends('book.date', 'book.tableOccupancy')
     def _ocuppancyPerDate(self):
