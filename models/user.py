@@ -27,12 +27,7 @@ class User(models.Model):
     @api.onchange('birthDate')
     def validateDate(self):
         if self.birthDate:
-            today = date.today()
-            age = today.year - self.birthDate.year - (
-                (today.month, today.day) < (self.birthDate.month, self.birthDate.day)
-            )
-            
-            if age < 16:
+            if self.getAge() < 16:
                 self.birthDate = ''
                 return {
                     'warning': {
@@ -73,7 +68,8 @@ class User(models.Model):
         )
         return age
 
-    _sql_constraints = [
-        ('dni_unique', 'UNIQUE(dni)', 'DNI is already added')
-    ]
-    
+    @api.constrains('dni')
+    def _check_dni_unique(self):
+        for record in self:
+            if self.search_count([('dni', '=', record.dni), ('id', '!=', record.id)]):
+                raise ValidationError('DNI is already added.')
