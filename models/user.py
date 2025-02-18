@@ -1,4 +1,5 @@
 from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 from datetime import date
 import re
 
@@ -11,18 +12,15 @@ class User(models.Model):
     birthDate = fields.Date(string="Date of birth")
     phone = fields.Char(string="Phone")
 
-    @api.onchange('dni')
+    @api.constrains('dni')
     def validateDni(self):
         if self.dni:
             dni_pattern = r'^\d{8}[A-Za-z]$'
             if not re.match(dni_pattern, self.dni):
                 self.dni = ''
-                return {
-                    'warning': {
-                        'title': "Invalid DNI",
-                        'message': "The DNI format is invalid. It must be 8 digits followed by a letter (e.g., 12345678A).",
-                    }
-                }
+                raise ValidationError('The DNI format is invalid. It must be 8 digits followed by a letter (e.g., 12345678A).')
+            
+        
 
     @api.onchange('birthDate')
     def validateDate(self):
