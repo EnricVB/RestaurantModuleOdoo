@@ -63,19 +63,19 @@
                 <field name="bookTableOccupancy"/>
                 <templates>
                     <t t-name="kanban-box">
-                        <div class="oe_kanban_global_click" style="padding: 10px;">
+                        <div class="oe_kanban_global_click" style="padding: 10px; width: 300px;">
                             <!-- Nombre del local -->
                             <div class="kanbanTitle">
                               <t t-esc="record.local.value"/>
                             </div>
 
                             <!-- Dibuja las sillas, la mesa y el numero de mesa en pantalla -->
-                            <div style="position: relative; width: 240px; height: 240px;">
+                            <div style="position: relative; width: 240px; height: 240px; margin-bottom: 50px; margin-top: 50px;">
                                 <img src="/RestaurantModuleOdoo/static/img/mesa.png" 
                                     style="
                                         position: absolute;
                                         top: 50%;
-                                        left: 68.5%;
+                                        left: 57%;
                                         transform: translate(-50%, -50%);
                                         width: 200px;
                                         height: 200px;
@@ -84,7 +84,7 @@
                                 <div style="
                                     position: absolute;
                                     top: 50%;
-                                    left: 68.5%;
+                                    left: 57%;
                                     transform: translate(-50%, -50%);
                                     z-index: 3;
                                     font-size: 24px;
@@ -106,21 +106,16 @@
                                             width: 60px;
                                             height: 60px;
                                             top: 37.5%;
-                                            left: 55.5%;
+                                            left: 45%;
                                             transform: 
-                                               rotate(#{(chair_index * (360 / chairs_count)) + 90}deg)
-                                              translate(100px);
+                                              rotate(#{(chair_index * (360 / chairs_count)) + 90}deg)
+                                              translate(145px) translateX(-50%);
                                             z-index: 1;"/>
                                 </t>
                             </div>
 
                             <!-- Muestra las sillas totales y cuantas de ellas estan ocupadas en la reserva actual -->
                             <div style="background-color: rgb(231, 231, 231);">
-                                <div class="kanbanSubtitle">
-                                    <span>Total Chairs:</span>
-                                    <span><t t-esc="record.chairs.value"/></span>
-                                </div>
-
                                 <div class="kanbanSubtitle">
                                     <span>Current Occupancy:</span>
                                     <span><t t-esc="record.bookTableOccupancy.value"/> / <t t-esc="record.chairs.value"/></span>

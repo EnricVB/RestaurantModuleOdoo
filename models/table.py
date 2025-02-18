@@ -37,7 +37,8 @@ class Table(models.Model):
             # Revisa que no exista una mesa ya creada en el local indicado con dicho numero de mesa
             domain = [
                 ('tableNumber', '=', table.tableNumber),
-                ('local', '=', table.local.id)
+                ('local', '=', table.local.id),
+                ('id', '!=', table.id)  # Excluye el registro actual
             ]
             if self.search_count(domain):
                 raise ValidationError('There can be just one same table number per local.')
