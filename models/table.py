@@ -31,6 +31,13 @@ class Table(models.Model):
             
             table.bookTableOccupancy = active_books[0].tableOccupancy if active_books else 0 
 
-    _sql_constraints = [
-        ('table_number_local_unique', 'UNIQUE(tableNumber, local)', 'There can be just one same table number per local.')
-    ]
+    @api.constrains('tableNumber', 'local')
+    def _check_table_number_local_unique(self):
+        for table in self:
+            # Revisa que no exista una mesa ya creada en el local indicado con dicho numero de mesa
+            domain = [
+                ('tableNumber', '=', table.tableNumber),
+                ('local', '=', table.local.id)
+            ]
+            if self.search_count(domain):
+                raise ValidationError('There can be just one same table number per local.')
