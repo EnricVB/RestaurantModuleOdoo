@@ -39,14 +39,17 @@
 
 .availableOccupancy {
     background-color: green;
+    color: white;
 }
 
 .partialOccupancy {
     background-color: yellow;
+    color: black;
 }
 
 .fullOccupancy {
     background-color: red;
+    color: white;
 }
 
 .kanban-container {

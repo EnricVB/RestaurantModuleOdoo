@@ -19,8 +19,6 @@ class User(models.Model):
             if not re.match(dni_pattern, self.dni):
                 self.dni = ''
                 raise ValidationError('The DNI format is invalid. It must be 8 digits followed by a letter (e.g., 12345678A).')
-            
-        
 
     @api.onchange('birthDate')
     def validateDate(self):

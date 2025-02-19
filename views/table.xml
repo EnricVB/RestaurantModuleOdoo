@@ -144,7 +144,7 @@
     <record model="ir.actions.act_window" id="create_table_action_window">
       <field name="name">table</field>
       <field name="res_model">restaurant.table</field>
-      <field name="view_mode">kanban,tree,form</field>
+      <field name="view_mode">kanban,form</field>
       <field name="help" type="html">
         <p class="oe_view_nocontent_create">table</p>
         <p>Click 'Create' to add new table.</p>
