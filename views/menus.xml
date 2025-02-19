@@ -57,6 +57,12 @@
                         sequence="1"
                         action="create_table_action_window"/>  
 
+                <menuitem id="menu_reservations_management"
+                    name="Reservations"
+                    parent="menu_restaurant_root"
+                    sequence="3"
+                    action="show_table_kanban_action_window"/>
+
 
     </data>
 </odoo>
